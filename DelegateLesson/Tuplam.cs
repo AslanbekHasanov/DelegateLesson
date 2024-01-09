@@ -40,15 +40,16 @@ namespace DelegateLesson
                 if (elementlar[i]?.ToString() == item?.ToString())
                 {
                     res = true;
+
                 }
 
             }
             return true;
         }
-
+        //uy ishi
         public void BittaElementniUchirishIndex(int index)
         {
-            throw new NotImplementedException();
+
         }
 
         public void HammasiniUchirish()
@@ -58,10 +59,48 @@ namespace DelegateLesson
             elementlar = values;
         }
        
-
+        //uy ishi 
         public void TuplamniUchirish(int index, int count)
         {
-            throw new NotImplementedException();
+            T[] _elementlar = new T[count];
+            int sanagich = 1;
+            for(int i = index; i < count; i++)
+            {
+                _elementlar[i] = elementlar[i];
+
+            }
+            elementlarSoni = elementlarSoni - count;
+            for (int i = 0; i < elementlarSoni; i++)
+            {
+                if (_elementlar[i]?.ToString() == elementlar[i]?.ToString())
+                {
+
+                }
+
+            }
+        }
+
+        public T ElementOlish(int index)
+        {
+            return elementlar[index];
+        }
+
+        public void Sort()
+        {
+            for (int i = 0; i < elementlarSoni - 1 ; i++)
+            {
+                for (int j = 0; j < elementlarSoni  - 1; j++)
+                {
+                    if (elementlar[j]?.ToString()?.CompareTo(elementlar[j  + 1]?.ToString()) >= 0)
+                    {
+                        T element = elementlar[j  +1];
+                        elementlar[j + 1] = elementlar[j];
+                        elementlar[j] = element;
+                    }
+
+                }
+
+            }
         }
     }
 }

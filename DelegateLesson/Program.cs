@@ -1,23 +1,28 @@
-﻿using DelegateLesson;
-using System;
-using System.Timers;
+﻿using System;
 
-namespace Delegate
+namespace Delegates
 {
-    public delegate T add<T>(T param1, T param2);
-
     class Program
     {
         static void Main(string[] args)
         {
-            Tuplam<int> tuplam = new Tuplam<int>();
-            tuplam.Qushish(10);
-            tuplam.Qushish(11);
-            tuplam.Qushish(12);
-            tuplam.Qushish(13);
+            Predicate<int> predicate = IsPrime;
 
-            tuplam.HammasiniUchirish();
-
+            for (int i=2; i<50; i++)
+            {
+                if(predicate(i)) Console.Write(i + " ");
+            }
+            Console.ReadKey();
         }
+
+        static bool IsPrime(int n)
+        {
+            for(int i=2; i<=Math.Sqrt(n); i++)
+            {
+                if (n % i == 0) return false;
+            }
+            return true;
+        }
+        public static bool IsEven(int number, int number1) => number % 2 == 0;
     }
 }

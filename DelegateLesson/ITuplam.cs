@@ -14,6 +14,9 @@ namespace DelegateLesson
         bool BittaElementniUchirish(T item);
         void BittaElementniUchirishIndex(int index);
         void TuplamniUchirish(int index, int count);
+        //element olish
+        T ElementOlish(int index);
+        void Sort();
 
     }
 }
